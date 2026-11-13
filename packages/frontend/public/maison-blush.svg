@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#e8e0d4"/><stop offset="1" stop-color="#cbbdb1"/></linearGradient>
+ <linearGradient id="petal" x2=".7" y2="1"><stop stop-color="#f6e8df"/><stop offset=".5" stop-color="#dfbfb6"/><stop offset="1" stop-color="#9c6c72"/></linearGradient>
+ <linearGradient id="inner" x2="1" y2=".8"><stop stop-color="#c7a097"/><stop offset=".55" stop-color="#f0d7cb"/><stop offset="1" stop-color="#fbebe0"/></linearGradient>
+ <linearGradient id="leaf" x2="1" y2="1"><stop stop-color="#91927a"/><stop offset="1" stop-color="#3f4939"/></linearGradient>
+ <filter id="shadow"><feDropShadow dx="6" dy="9" stdDeviation="7" flood-color="#6a5049" flood-opacity=".15"/></filter>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".045"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+ <g id="flower" filter="url(#shadow)">
+  <path d="M0 30C-102 5-120-61-93-126C-18-120 26-61 0 30" fill="url(#petal)"/>
+  <path d="M0 30C-26-52-6-135 52-167C99-99 94-22 0 30" fill="url(#inner)"/>
+  <path d="M0 30C33-60 101-83 150-74C138 2 70 48 0 30" fill="url(#petal)"/>
+  <path d="M0 30C-37 16-82-16-63-75C-4-62 26-23 0 30" fill="url(#inner)"/>
+  <path d="M0 30C17-22 57-55 87-49C88-4 61 24 0 30" fill="url(#inner)"/>
+  <path d="M-91-122Q-66-37-4 23M51-162Q35-66 3 22M145-72Q54-31 6 25" fill="none" stroke="#a97e80" opacity=".22" stroke-width="1.4"/>
+  <path d="M-9 24Q6-19 19-28" fill="none" stroke="#806c42" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="19" cy="-28" r="9" fill="#bba567"/>
+ </g>
+</defs>
+<rect width="800" height="1000" fill="url(#bg)"/>
+<g filter="url(#grain)">
+ <path d="M378 1030C441 832 337 627 338 437C345 275 521 179 560 73" fill="none" stroke="#67594c" stroke-width="15"/>
+ <path d="M366 773Q478 640 598 597M344 580Q201 521 177 372M370 340Q256 273 241 188" fill="none" stroke="#67594c" stroke-width="9"/>
+ <path d="M394 856Q541 858 613 739Q479 753 394 856M356 647Q201 689 153 614Q282 596 356 647M405 320Q514 333 551 240Q446 229 405 320" fill="url(#leaf)"/>
+ <use href="#flower" transform="translate(333 457) rotate(-21) scale(1.17)"/>
+ <use href="#flower" transform="translate(596 599) rotate(44) scale(.8)"/>
+ <use href="#flower" transform="translate(237 218) rotate(-55) scale(.64)"/>
+ <path d="M557 107Q529 74 542 39Q580 38 588 76Q586 99 557 107" fill="url(#petal)"/>
+</g>
+</svg>

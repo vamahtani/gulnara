@@ -1,0 +1,23 @@
+services:
+  sql:
+    extends:
+      file: compose.sql.yml
+      service: sql
+  dab:
+    image: mcr.microsoft.com/azure-databases/data-api-builder@sha256:d07e3e1ce53bdf84d3a4a0a4ce12e44f0b902e7316c782a3d682fbe074509c0b
+    platform: linux/amd64
+    pull_policy: never
+    environment:
+      SQL_CONNECTION_STRING: ${SQL_CONNECTION_STRING:?Run npm run local:init}
+      AUTH_ISSUER: ${AUTH_ISSUER:?Set external token issuer}
+      AUTH_AUDIENCE: ${AUTH_AUDIENCE:?Set API token audience}
+      ASPNETCORE_URLS: http://+:5000
+    ports:
+      - "127.0.0.1:${DAB_PORT:-5081}:5000"
+    volumes:
+      - ./packages/data/dab-config.json:/App/dab-config.json:ro
+    depends_on:
+      sql:
+        condition: service_healthy
+volumes:
+  sql-data:

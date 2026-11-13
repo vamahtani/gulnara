@@ -1,0 +1,39 @@
+{
+  "name": "gulnara",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "engines": { "node": ">=22.22.2" },
+  "scripts": {
+    "build": "npm run build:backend && npm run build --workspaces --if-present",
+    "build:backend": "tsc -p tsconfig.backend.json",
+    "test": "node --test tests/*.test.mjs && npm run test --workspace @app/frontend",
+    "local:preflight": "node scripts/development.mjs preflight",
+    "local:status": "node scripts/development.mjs status",
+    "local:preview": "node scripts/development.mjs preview",
+    "local:connect": "node scripts/development.mjs connect",
+    "local:ready": "node scripts/development.mjs ready",
+    "local:init": "node scripts/local.mjs init",
+    "local:start": "node scripts/local.mjs start",
+    "local:stop": "node scripts/local.mjs stop",
+    "local:sql:start": "node scripts/local.mjs sql-start",
+    "local:sql:stop": "node scripts/local.mjs sql-stop",
+    "test:sql": "node scripts/sql-acceptance.mjs",
+    "demo:ai": "node scripts/vector-demo.mjs",
+    "acceptance": "node scripts/acceptance.mjs",
+    "deployment:prepare": "node scripts/deployment.mjs",
+    "deployment:preflight": "node scripts/deployment-plan.mjs preflight",
+    "deployment:plan": "node scripts/deployment-plan.mjs plan",
+    "deployment:status": "node scripts/deployment-execution.mjs status",
+    "images:build": "node scripts/build-images.mjs",
+    "local:adopt-sql": "node scripts/adopt-sql.mjs",
+    "start": "npm run local:start",
+    "preview:design": "npm run preview --workspace @app/frontend",
+    "serve:web": "node dist/packages/server/server.js"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.11",
+    "typescript": "5.9.3"
+  }
+}

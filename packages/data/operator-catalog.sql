@@ -1,0 +1,27 @@
+-- REVIEW ONLY. An authorized operator must configure real counts, recipes and
+-- publishing choices. This file seeds no inventory and grants no permissions.
+-- Use the Azure SQL application database, never master.
+-- All inventory/recipe maintenance must hold this same transaction-owned lock:
+--
+-- SET XACT_ABORT ON;
+-- BEGIN TRANSACTION;
+-- DECLARE @Result int;
+-- EXEC @Result = sys.sp_getapplock @Resource = N'Gulnara.Inventory',
+--   @LockMode = 'Exclusive', @LockOwner = 'Transaction', @LockTimeout = 10000;
+-- IF @Result < 0 THROW 51103, 'Inventory is busy.', 1;
+-- <reviewed parameterized changes to dbo.Flowers, dbo.Designs, dbo.DesignStems>
+-- COMMIT TRANSACTION;
+--
+-- Colors are comma-separated lowercase tags: pink, cream, white, burgundy, green.
+-- Occasions: birthday, anniversary, thank you, just because, celebration, sympathy.
+-- Moods: romantic, gentle, joyful, natural, dramatic.
+-- StemsPerUnit defines petite; signature doubles and grand triples the recipe.
+-- New designs default to unpublished samples. Publishing real inventory requires
+-- IsSample=0 and IsPublished=1, with at least one valid recipe line.
+-- Names and descriptions must accurately describe the configured recipe.
+-- Counts represent stems available for reservation, not total physical stock.
+-- Do not remove reserved stems from inventory twice.
+--
+-- Requests have no automatic expiration/cancellation workflow in this slice.
+-- Reconciliation, release, fulfillment and retention require an operator procedure
+-- and approved policy before production use. Never grant table writes to runtime.

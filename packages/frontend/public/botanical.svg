@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1100" viewBox="0 0 1000 1100">
+<defs>
+ <radialGradient id="back"><stop stop-color="#716a4f"/><stop offset="1" stop-color="#252b24"/></radialGradient>
+ <radialGradient id="pink"><stop stop-color="#f0c4bd"/><stop offset=".55" stop-color="#cf8d91"/><stop offset="1" stop-color="#9f5768"/></radialGradient>
+ <radialGradient id="cream"><stop stop-color="#fff5de"/><stop offset=".7" stop-color="#eee0bf"/><stop offset="1" stop-color="#bba57d"/></radialGradient>
+ <radialGradient id="wine"><stop stop-color="#cc747d"/><stop offset=".5" stop-color="#9d3f56"/><stop offset="1" stop-color="#572035"/></radialGradient>
+ <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#c1b292"/><stop offset=".5" stop-color="#ded0ac"/><stop offset="1" stop-color="#97886c"/></linearGradient>
+ <linearGradient id="leaf" x2="1" y2="1"><stop stop-color="#87906d"/><stop offset="1" stop-color="#333f32"/></linearGradient>
+ <filter id="shadow"><feDropShadow dx="3" dy="12" stdDeviation="13" flood-opacity=".3"/></filter>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".055"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+ <g id="foliage" fill="url(#leaf)" stroke="#a3a585" stroke-width="1">
+  <path d="M0 190Q-12 75 0-80" fill="none" stroke-width="4"/>
+  <path d="M0 110Q-97 99-90 34Q-18 25 0 110M-2 60Q76 51 84-10Q15-9-2 60M-2 8Q-62-8-50-61Q0-54-2 8M0-35Q47-46 36-92Q-1-83 0-35"/>
+ </g>
+ <g id="rose">
+  <path d="M0-98C39-118 65-77 79-47C118-28 105 27 81 47C74 92 31 104 0 89C-37 111-81 85-82 51C-117 21-105-24-77-43C-74-85-39-105 0-98Z"/>
+  <g fill="none" stroke="#fff0df" stroke-opacity=".28" stroke-width="2">
+   <path d="M-76-40Q-35-79 12-55Q75-69 78-14Q104 28 55 56Q24 103-24 67Q-81 78-66 20Q-103-14-55-41Q-13-77 25-42Q80-37 55 11Q75 53 24 52Q-17 79-34 40Q-73 16-36-14Q-31-54 9-30Q51-40 37 0Q52 32 13 29Q-22 49-20 12Q-44-13-9-13Q10-33 21-7Q38 10 10 15Q-10 26-6 2Q2-13 12 0"/>
+   <path d="M-44-85Q-11-62 12-55M91 32Q62 13 55 11M-43 90Q-31 63-24 67M-91 10Q-72 21-66 20M52-80Q47-48 25-42"/>
+  </g>
+ </g>
+ <g id="daisy" fill="url(#cream)">
+  <ellipse cy="-44" rx="17" ry="48"/><ellipse cy="-44" rx="17" ry="48" transform="rotate(45)"/><ellipse cy="-44" rx="17" ry="48" transform="rotate(90)"/><ellipse cy="-44" rx="17" ry="48" transform="rotate(135)"/><ellipse cy="-44" rx="17" ry="48" transform="rotate(180)"/><ellipse cy="-44" rx="17" ry="48" transform="rotate(225)"/><ellipse cy="-44" rx="17" ry="48" transform="rotate(270)"/><ellipse cy="-44" rx="17" ry="48" transform="rotate(315)"/><circle r="24" fill="#a78843"/><circle r="14" fill="#705b36"/>
+ </g>
+</defs>
+<rect width="1000" height="1100" fill="url(#back)"/>
+<g filter="url(#grain)">
+ <ellipse cx="516" cy="1060" rx="255" ry="30" fill="#111c16" opacity=".4"/>
+ <g opacity=".65" transform="translate(200 80) rotate(-35)"><use href="#foliage" transform="scale(1.7)"/></g>
+ <g transform="translate(787 376) rotate(45)"><use href="#foliage" transform="scale(1.7)"/></g>
+ <g transform="translate(170 493) rotate(-54)"><use href="#foliage" transform="scale(1.3)"/></g>
+ <path d="M218 542L435 1040L657 1040L815 537L513 696Z" fill="url(#paper)" filter="url(#shadow)"/>
+ <path d="M218 542L513 696L435 1040M815 537L513 696L657 1040" fill="none" stroke="#ebdfc3" stroke-opacity=".4" stroke-width="3"/>
+ <g stroke="#586346" stroke-width="7" fill="none"><path d="M514 845L397 323M525 846L654 338M532 850L273 444M520 844L760 423M510 843L519 239"/></g>
+ <g transform="translate(402 379) rotate(-30)"><use href="#foliage" transform="scale(1.5)"/></g>
+ <g transform="translate(675 525) rotate(38)"><use href="#foliage"/></g>
+ <g filter="url(#shadow)">
+  <use href="#rose" fill="url(#wine)" transform="translate(321 393) rotate(-23) scale(1.19)"/>
+  <use href="#rose" fill="url(#cream)" transform="translate(514 269) rotate(14) scale(.98)"/>
+  <use href="#rose" fill="url(#pink)" transform="translate(649 360) rotate(42) scale(1.22)"/>
+  <use href="#rose" fill="url(#cream)" transform="translate(251 538) rotate(-13) scale(.87)"/>
+  <use href="#rose" fill="url(#pink)" transform="translate(453 468) rotate(-31) scale(1.4)"/>
+  <use href="#rose" fill="url(#wine)" transform="translate(688 541) rotate(14) scale(1.08)"/>
+  <use href="#rose" fill="url(#cream)" transform="translate(529 619) rotate(40) scale(1.04)"/>
+  <use href="#daisy" transform="translate(757 439) rotate(13) scale(.65)"/>
+  <use href="#daisy" transform="translate(366 605) rotate(16) scale(.7)"/>
+ </g>
+ <g fill="#e1cfb1"><circle cx="334" cy="245" r="9"/><circle cx="308" cy="259" r="7"/><circle cx="320" cy="221" r="6"/><circle cx="345" cy="214" r="7"/><circle cx="750" cy="625" r="8"/><circle cx="773" cy="609" r="7"/><circle cx="777" cy="640" r="6"/></g>
+ <path d="M449 847Q536 812 617 842L612 869Q520 842 460 879Z" fill="#572637"/>
+ <path d="M523 850Q420 775 404 830Q401 876 523 850Q611 760 628 815Q647 855 523 850M525 851L463 973L483 954L494 980L540 858M526 852L596 968L600 935L624 950L547 849" fill="#774052" stroke="#9c6570" stroke-width="2"/>
+</g>
+</svg>

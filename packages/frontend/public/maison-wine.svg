@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+<defs>
+ <radialGradient id="bg" cx=".35" cy=".2" r="1"><stop stop-color="#4c4a3e"/><stop offset="1" stop-color="#171f1c"/></radialGradient>
+ <linearGradient id="red" x1=".1" y1="0" x2=".8" y2="1"><stop stop-color="#b7787b"/><stop offset=".35" stop-color="#843e50"/><stop offset=".65" stop-color="#5a283d"/><stop offset="1" stop-color="#342638"/></linearGradient>
+ <linearGradient id="leaf" x2="1" y2="1"><stop stop-color="#76816a"/><stop offset=".7" stop-color="#394d3e"/><stop offset="1" stop-color="#1f312b"/></linearGradient>
+ <linearGradient id="vase" x2="1" y2="0"><stop stop-color="#9c8b70"/><stop offset=".4" stop-color="#d8cbb1"/><stop offset="1" stop-color="#9f9077"/></linearGradient>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+ <g id="bloom">
+  <path d="M0 84C-44 45-136 12-112-76C-92-143-24-145 0-80C27-150 109-150 117-71C126 6 35 46 0 84Z" fill="url(#red)"/>
+  <g fill="none" stroke="#d7a09d" opacity=".23">
+   <path d="M0 78L0-77M0 63Q-54 15-91-64M0 42Q-76 1-112-41M0 64Q65 11 109-56M0 25Q73-6 115-48M0 3Q-35-55-58-99M0-3Q37-60 64-108" stroke-width="1.5"/>
+  </g>
+  <path d="M0 24L-12-84" fill="none" stroke="#a88162" stroke-width="12" stroke-linecap="round"/>
+  <path d="M-2 22L-13-83" fill="none" stroke="#d3bb89" stroke-width="5" stroke-linecap="round"/>
+ </g>
+</defs>
+<rect width="800" height="1000" fill="url(#bg)"/>
+<g filter="url(#grain)">
+ <path d="M0 853L800 796V1000H0Z" fill="#6a6656"/>
+ <ellipse cx="410" cy="914" rx="165" ry="28" fill="#171e19" opacity=".4"/>
+ <path d="M397 814Q317 559 301 356M400 812Q546 663 579 507M408 805Q462 496 477 247" fill="none" stroke="#68745a" stroke-width="8"/>
+ <path d="M397 789Q223 788 143 586Q348 616 397 789M411 791Q578 724 680 655Q558 658 411 791" fill="url(#leaf)"/>
+ <path d="M394 781Q264 704 143 586M420 784L680 655" fill="none" stroke="#8c9b7c" opacity=".5"/>
+ <use href="#bloom" transform="translate(296 313) rotate(-32) scale(1.05)"/>
+ <use href="#bloom" transform="translate(478 210) rotate(22) scale(.76)"/>
+ <use href="#bloom" transform="translate(589 479) rotate(42) scale(.88)"/>
+ <path d="M336 752L459 752L455 779C538 801 534 900 476 925Q401 955 328 925C265 900 270 800 340 779Z" fill="url(#vase)"/>
+ <ellipse cx="398" cy="753" rx="62" ry="12" fill="#8a8067"/>
+ <ellipse cx="398" cy="751" rx="49" ry="7" fill="#343a2b"/>
+ <path d="M310 834Q339 805 337 802M310 849Q302 892 334 911" fill="none" stroke="#e5d7bc" opacity=".2" stroke-width="4"/>
+</g>
+</svg>
