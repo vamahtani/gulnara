@@ -1,11 +1,20 @@
 # Gulnara - Flowers, with feeling
 
-Source for a floral studio website built with React, Vite, TypeScript, npm
-workspaces, Data API Builder (DAB), and Azure SQL. The site includes an editorial
-collection, rules-based bouquet inspiration, an authenticated booking contract,
-and an optional Azure OpenAI / native SQL vector-search demonstration.
+**[Demo](https://aka.ms/gulnara-demo) | [Live website](https://aka.ms/gulnara)**
 
-Existing public website: <https://gentle-beach-033203f0f.5.azurestaticapps.net/>.
+The demo video may require Microsoft 365 sign-in and permission. Repository
+visibility does not change video-sharing access.
+
+Gulnara is a floral studio website built using the **Azure SQL Database
+container** for local development, with React, Vite, TypeScript, npm workspaces,
+and Data API Builder (DAB). The default full-stack architecture connects the
+React frontend through a same-origin Node proxy and DAB to Azure SQL.
+The optional AI demonstration combines Azure OpenAI embeddings with native
+Azure SQL vector search and DiskANN.
+
+The site includes an editorial collection, rules-based bouquet inspiration,
+and an authenticated booking contract.
+
 Sharing this repository does not redeploy or connect to that site's resources.
 Catalog compositions and prices are illustrative, not verified inventory.
 
@@ -21,7 +30,8 @@ and currently fails. Registry credentials/configuration are not included.
 Configure any required authentication privately using your organization's
 approved process, not by committing tokens or sharing the owner's credentials.
 
-Clone into a new directory after accepting your GitHub collaborator invitation:
+Clone this public repository into a new directory; no collaborator invitation
+is required to read or clone it:
 
 ```powershell
 git clone https://github.com/vamahtani/gulnara.git
@@ -122,7 +132,8 @@ guidance. Infrastructure is not a ready-to-run cloud deployment.
 
 ## Clean handoff and assets
 
-This is a clean initial source snapshot. It excludes real `.env` files, secrets,
+This repository started from a clean source snapshot. It excludes real `.env`
+files, secrets,
 database exports/backups, local data, caches, AI usage receipts, deployment
 artifacts/history, personal/internal notes, dependencies, logs, ZIP archives and
 generated build output. Frozen compiled design comparisons are also excluded:
@@ -136,8 +147,8 @@ Photographer credits, original source links and the
 photography-credit footer. These are representative stock images, not
 photographs of available Gulnara inventory. Local editorial artwork and SVGs are
 retained. Do not remove asset attribution or imply endorsement by photographers.
-No blanket open-source license is granted by making this repository private;
+Public visibility does not grant a blanket open-source license;
 confirm rights before redistributing the application or its assets.
 
 Keep credentials outside Git. Only placeholder configuration examples belong
-in the repository. A private repository still requires secret hygiene.
+in the repository. Never commit credentials, including in private forks.
